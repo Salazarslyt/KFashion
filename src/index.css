@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Kashvi Fashion Design System - Elegant colors for premium fashion brand */
+
+@layer base {
+  :root {
+    /* Brand Background */
+    --background: 217 19% 98%; /* #f9fafb - Light gray background */
+    --foreground: 220 26% 14%; /* Dark gray text */
+
+    /* Card & Surface Colors */
+    --card: 0 0% 100%; /* Pure white cards */
+    --card-foreground: 220 26% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 14%;
+
+    /* Brand Colors - Elegant & Luxurious */
+    --primary: 220 26% 14%; /* Rich black for primary actions */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 333 4% 85%; /* Soft gray-pink */
+    --secondary-foreground: 220 26% 14%;
+
+    /* Gold Accent - Luxury Touch */
+    --accent: 45 87% 65%; /* Elegant gold */
+    --accent-foreground: 220 26% 14%;
+
+    /* Pastel Pink - Feminine Touch */
+    --pink: 339 82% 84%; /* Soft pastel pink */
+    --pink-foreground: 220 26% 14%;
+
+    /* Muted Colors */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 45 87% 65%; /* Gold focus ring */
+
+    /* Design System Radius */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Gradients for premium feel */
+  :root {
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(220 26% 8%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 87% 65%), hsl(45 87% 55%));
+    --gradient-pink: linear-gradient(135deg, hsl(var(--pink)), hsl(339 82% 74%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 26% 14%), hsl(220 26% 8%));
+    
+    /* Elegant Shadows */
+    --shadow-elegant: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04);
+    --shadow-gold: 0 10px 30px -10px hsl(45 87% 65% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.08);
+    
+    /* Smooth Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  /* Brand Logo Styles */
+  .brand-logo {
+    @apply font-playfair font-bold text-2xl md:text-3xl;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold;
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-elegant);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elegant), 0 10px 40px -10px hsl(var(--primary) / 0.2);
+  }
+
+  .btn-gold {
+    @apply text-foreground px-6 py-3 rounded-lg font-semibold;
+    background: var(--gradient-gold);
+    box-shadow: var(--shadow-gold);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-gold), 0 8px 25px -8px hsl(45 87% 65% / 0.4);
+  }
+
+  /* Card Styles */
+  .card-elegant {
+    @apply bg-card rounded-xl p-6;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .card-elegant:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  /* Product Card Styles */
+  .product-card {
+    @apply bg-card rounded-xl overflow-hidden;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .product-card img {
+    transition: var(--transition-smooth);
+  }
+
+  .product-card:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Navigation Styles */
+  .nav-link {
+    @apply relative font-medium text-foreground transition-colors;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Loader Animation */
+  .loader-bounce {
+    animation: bounce 1s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+      transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+      transform: translate3d(0,-30px,0);
+    }
+    70% {
+      transform: translate3d(0,-15px,0);
+    }
+    90% {
+      transform: translate3d(0,-4px,0);
+    }
+  }
+
+  /* Fade in animations */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
