@@ -42,7 +42,7 @@ const Home = () => {
         <div className="absolute inset-0">
           <img
             //src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&h=1080&fit=crop&crop=center"
-            src='public\test.png'
+            src='/test.png'
             alt="Fashion Hero"
             className="w-full h-full object-cover"
           />
